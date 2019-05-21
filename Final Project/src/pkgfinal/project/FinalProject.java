@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pkgfinal.project;
 
 import java.awt.Font;
@@ -25,8 +20,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
- *
- * @author tomla
+ * JavaFX Edition for the ATM App worked on in class
+ * @author Thomas Lawless/Justin Moran/Andy Osorio
  */
 public class FinalProject extends Application {
     
@@ -62,8 +57,8 @@ public class FinalProject extends Application {
     private TextField amountWithdrawl;
     
     private Label currentBalanceAmount;
-   private ToggleGroup group;
-   private VBox numberButtons;
+    private ToggleGroup group;
+    private VBox numberButtons;
     
     @Override
     public void start(Stage primaryStage) {
@@ -142,7 +137,7 @@ public class FinalProject extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         
-            }
+    }
     
  
     public static void main(String[] args) {
