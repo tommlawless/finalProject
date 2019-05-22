@@ -187,20 +187,32 @@ public class FinalProject extends Application {
         // Transaction Buttons
         viewBTN = new Button ("View Balance");
         viewBTN.setOnAction((event)->{
+            try{
              viewBalance(Integer.parseInt(inputACC.getText()), 
-             Integer.parseInt(inputPIN.getText()));    
+             Integer.parseInt(inputPIN.getText()));  
+            }catch(Exception ex){
+                output.appendText("Exception Detected! Check input!\n");
+            }
         });
         depositBTN = new Button ("Deposit ($)");
         depositBTN.setOnAction((event)->{
+            try{
             deposit(Integer.parseInt(inputACC.getText()), 
                     Integer.parseInt(inputPIN.getText()), 
                     Double.parseDouble(inputDeposit.getText()));
+            }catch(Exception ex){
+                output.appendText("Exception Detected! Check input!\n");
+            }
         });
         withdrawlBTN = new Button ("Withdrawl ($)");
         withdrawlBTN.setOnAction((event)->{
+            try{
             withdrawl(Integer.parseInt(inputACC.getText()), 
                     Integer.parseInt(inputPIN.getText()),
                     Double.parseDouble(inputWithdrawl.getText()));
+            }catch(Exception ex){
+                output.appendText("Exception Detected! Check input!\n");
+            }
         });
         
         // Output Screen

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Final Project">
+  <ClassDiagramComponents>
+    <Class name="Account" package="pkgfinal.project" visibility="public" xPosition="373.0" yPosition="20.0">
+      <Fields>
+        <Field name="accountNumber" type="int" visibility="private"/>
+        <Field name="pin" type="int" visibility="private"/>
+        <Field name="availableBalance" type="double" visibility="private"/>
+        <Field name="totalBalance" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="accountNumber"/>
+          <Argument type="int" name="pin"/>
+          <Argument type="double" name="availableBalance"/>
+          <Argument type="double" name="totalBalance"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="validatePin" returnType="boolean" visibility="public">
+          <Argument type="int" name="pin"/>
+        </Method>
+        <Method name="getAccountNumber" returnType="int" visibility="public"/>
+        <Method name="getAvailableBalance" returnType="double" visibility="public"/>
+        <Method name="getTotalBalance" returnType="double" visibility="public"/>
+        <Method name="credit" returnType="void" visibility="public">
+          <Argument type="double" name="amount"/>
+        </Method>
+        <Method name="debit" returnType="void" visibility="public">
+          <Argument type="double" name="amount"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BankDatabase" package="pkgfinal.project" visibility="public" xPosition="452.0" yPosition="399.0">
+      <Fields>
+        <Field name="accounts" type="Account[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getAccount" returnType="Account" visibility="private">
+          <Argument type="int" name="accountNumber"/>
+        </Method>
+        <Method name="authenticateUser" returnType="boolean" visibility="public">
+          <Argument type="int" name="accountNumber"/>
+          <Argument type="int" name="pin"/>
+        </Method>
+        <Method name="getAvailableBalance" returnType="double" visibility="public">
+          <Argument type="int" name="accountNumber"/>
+        </Method>
+        <Method name="getTotalBalance" returnType="double" visibility="public">
+          <Argument type="int" name="accountNumber"/>
+        </Method>
+        <Method name="credit" returnType="void" visibility="public">
+          <Argument type="int" name="accountNumber"/>
+          <Argument type="double" name="amount"/>
+        </Method>
+        <Method name="debit" returnType="void" visibility="public">
+          <Argument type="int" name="accountNumber"/>
+          <Argument type="double" name="amount"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FinalProject" package="pkgfinal.project" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="bankDatabase" type="BankDatabase" visibility="private" isFinal="true"/>
+        <Field name="clearPIN" type="Button" visibility="private"/>
+        <Field name="clearACC" type="Button" visibility="private"/>
+        <Field name="oneP" type="Button" visibility="private"/>
+        <Field name="twoP" type="Button" visibility="private"/>
+        <Field name="threeP" type="Button" visibility="private"/>
+        <Field name="fourP" type="Button" visibility="private"/>
+        <Field name="fiveP" type="Button" visibility="private"/>
+        <Field name="sixP" type="Button" visibility="private"/>
+        <Field name="sevenP" type="Button" visibility="private"/>
+        <Field name="eightP" type="Button" visibility="private"/>
+        <Field name="nineP" type="Button" visibility="private"/>
+        <Field name="zeroP" type="Button" visibility="private"/>
+        <Field name="oneA" type="Button" visibility="private"/>
+        <Field name="twoA" type="Button" visibility="private"/>
+        <Field name="threeA" type="Button" visibility="private"/>
+        <Field name="fourA" type="Button" visibility="private"/>
+        <Field name="fiveA" type="Button" visibility="private"/>
+        <Field name="sixA" type="Button" visibility="private"/>
+        <Field name="sevenA" type="Button" visibility="private"/>
+        <Field name="eightA" type="Button" visibility="private"/>
+        <Field name="nineA" type="Button" visibility="private"/>
+        <Field name="zeroA" type="Button" visibility="private"/>
+        <Field name="viewBTN" type="Button" visibility="private"/>
+        <Field name="depositBTN" type="Button" visibility="private"/>
+        <Field name="withdrawlBTN" type="Button" visibility="private"/>
+        <Field name="header" type="Label" visibility="private"/>
+        <Field name="lblACC" type="Label" visibility="private"/>
+        <Field name="lblPIN" type="Label" visibility="private"/>
+        <Field name="output" type="TextArea" visibility="private"/>
+        <Field name="inputACC" type="TextField" visibility="private"/>
+        <Field name="inputPIN" type="TextField" visibility="private"/>
+        <Field name="inputWithdrawl" type="TextField" visibility="private"/>
+        <Field name="inputDeposit" type="TextField" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="start" returnType="void" visibility="public">
+          <Argument type="Stage" name="primaryStage"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="viewBalance" returnType="void" visibility="private">
+          <Argument type="int" name="accnum"/>
+          <Argument type="int" name="pin"/>
+        </Method>
+        <Method name="deposit" returnType="void" visibility="private">
+          <Argument type="int" name="accnum"/>
+          <Argument type="int" name="pin"/>
+          <Argument type="double" name="amount"/>
+        </Method>
+        <Method name="withdrawl" returnType="void" visibility="private">
+          <Argument type="int" name="accnum"/>
+          <Argument type="int" name="pin"/>
+          <Argument type="double" name="amount"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="pkgfinal.project.BankDatabase" target="pkgfinal.project.Account" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bankDatabase" source="pkgfinal.project.FinalProject" target="pkgfinal.project.BankDatabase" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
