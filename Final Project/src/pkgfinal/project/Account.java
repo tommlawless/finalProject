@@ -3,8 +3,8 @@ package pkgfinal.project;
 /**
  * Class Account represents as bank account.
  * 
- * @author Prof. Carl B. Struck
- * @version 5/10/2018
+ * @author Prof. Carl B. Struck, JavaFX edit by Andy Osorio/Thomas Lawless/Justin Moran
+ * @version 5/10/2018, FX version SCCC Spring 2019
  */
 public class Account
 {
